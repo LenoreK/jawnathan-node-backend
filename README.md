@@ -8,6 +8,9 @@ As an Admin I need a protected page to create, read, update, and delete the foll
 * Videos (might be brought in and out through youtube)
 * Performances (this is the most important aspect to complete)
 
+Conditional that checks if user is an admin
+edit button would only show up if user is an admin
+
 Wireframe:
 Method  | Path  | Purpose
 ------------- | -------------  | -------------
@@ -20,3 +23,16 @@ PUT  | /performances/:id   | Update a particular performance
 GET  | /performances/:id/edit  | Form page for editing an existing performance
 DELETE  | /performances/:id   | Delete a particular performance
 GET  | *   | 404 Page
+
+Database:
+
+Performances:
+Name  | Data-type  |   Properties
+------------- | ------------- | -------------
+performances_id  |  INT  |  primary key
+start_time  |  TIME  |  NOT NULL
+end_time  |  TIME  |  //
+date  |  DATE  |  NOT NULL
+place  |  VARCHAR(50)  |  NOT NULL
+city  |  VARCHAR(50)  |  NOT NULL
+state  |  VARCHAR(50)  |  NOT NULL
