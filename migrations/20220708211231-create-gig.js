@@ -2,26 +2,28 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('gigs', {
-      id: {
+      gig_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      gig_id: {
-        type: Sequelize.INTEGER
-      },
       date: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
       },
       start_time: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
       },
       end_time: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
       },
       venue_id: {
-        type: Sequelize.SMALLINT
+        type: Sequelize.SMALLINT,
+        allowNull: false,
+        foreignkey: true
       },
       createdAt: {
         allowNull: false,

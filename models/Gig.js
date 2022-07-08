@@ -5,10 +5,15 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class gig extends Model {
 
-    static associate({ Venue }) {
-      Venue.belongsTo(Venue, {
-        foreignKey: "Venue_id",
-        as: "Venue"
+    static associate({ venue, user }) {
+      gig.belongsTo(venue, {
+        foreignKey: "venue_id",
+        as: "venue"
+      })
+
+      gig.hasMany(user, {
+        foreignKey: "user_id",
+        as: "user"
       })
     }
   }

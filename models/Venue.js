@@ -5,11 +5,11 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class venue extends Model {
 
-    static associate({ Gig }) {
+    static associate({ gig }) {
 
-      Gig.hasMany(Gig, {
-        foreignKey: "Gig_id",
-        as: "Gig"
+      venue.hasMany(gig, {
+        foreignKey: "venue_id",
+        as: "venue"
       })
     }
   }
