@@ -15,7 +15,7 @@ Wireframe:
 Method  | Path  | Purpose
 ------------- | -------------  | -------------
 GET  | /   | Home Page
-GET  | /performances   | Places index 
+GET  | /performances   | Performances index 
 POST  | /performances   | Create new Performance
 GET  | /performances/new   | Form page for creating a new performance
 GET  | /performances/:id   | Details about a particular performance
@@ -36,3 +36,20 @@ date  |  DATE  |  NOT NULL
 place  |  VARCHAR(50)  |  NOT NULL
 city  |  VARCHAR(50)  |  NOT NULL
 state  |  VARCHAR(50)  |  NOT NULL
+
+User:
+Name  | Data-type  |   Properties
+------------- | ------------- | -------------
+user_id  |  INT  |  primary key
+username  |  VARCHAR(50)  |  NOT NULL
+password  |  VARCHAR(50)  |  NOT NULL
+is_admin  |  Boolean  |  NOT NULL
+
+Video:
+Name  | Data-type  |   Properties
+------------- | ------------- | -------------
+video_id  |  INT  |  primary key
+path  |  VARCHAR(MAX)  |  NOT NULL
+
+Music:
+This will be connected to spotify. His music is not up there yet so I can not test it.
