@@ -3,18 +3,18 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class venue extends Model {
+  class Venue extends Model {
 
-    static associate({ gig }) {
+    static associate({ Gig }) {
 
-      venue.hasMany(gig, {
+      Venue.hasMany(Gig, {
         foreignKey: "venue_id",
         as: "venue"
       })
     }
   }
 
-  venue.init({
+  Venue.init({
     venue_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -46,5 +46,5 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'venue',
     timestamps: false
   })
-  return venue
+  return Venue
 }

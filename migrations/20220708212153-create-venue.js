@@ -1,5 +1,4 @@
 'use strict';
-const { DataTypes } = require('sequelize')
 
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -15,7 +14,7 @@ module.exports = {
         allowNull: false
       },
       venue_name: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false
       },
       venue_url: {

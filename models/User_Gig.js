@@ -1,16 +1,17 @@
 'use strict';
+
 const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class user_gig extends Model {
+  class User_Gig extends Model {
 
     static associate(models) {
 
     }
 
   }
-  user_gig.init({
+  User_Gig.init({
     user_gig_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -26,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {
     sequelize,
-    modelName: 'user_gig',
+    modelName: 'User_Gig',
   });
-  return user_gig;
+  return User_Gig;
 };

@@ -1,5 +1,4 @@
 'use strict';
-const { DataTypes } = require('sequelize')
 
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -11,7 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false
       },
       date: {

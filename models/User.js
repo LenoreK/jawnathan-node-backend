@@ -1,19 +1,21 @@
 'use strict'
+
 const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class user extends Model {
+    class User extends Model {
         
-        static associate(models) {
-            user.belongsToMany(gig, {
+        static associate({ Gig, User_Gig }) {
+            User.belongsToMany(Gig, {
                 foreignKey: "user_id",
-                as: "user_gig"
+                as: "user_gig",
+                through: User_Gig
             })
         }
       }
 
-  user.init({
+  User.init({
     user_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -46,5 +48,5 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true
   })
 
-  return user
+  return User
 }

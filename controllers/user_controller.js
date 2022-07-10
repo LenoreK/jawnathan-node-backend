@@ -4,20 +4,6 @@ const db = require('../models')
 const { User } = db 
 const { Op } = require('sequelize')
 
-// FIND ALL Users
-users.get('/', async (req, res) => {
-    try {
-        const foundUsers = await User.findAll({
-            where: {
-                user_name: { [Op.like]: `%${req.query.user_name ? req.query.user_name : ''}%` }
-            }
-        })
-        res.status(200).json(foundUsers)
-    } catch (error) {
-        res.status(500).json(error)
-    }
-})
-
 // FIND All Users Option 2
 users.get('/', async (req, res) => {
     try {

@@ -23,6 +23,7 @@ const venuesController = require('./controllers/venue_controller')
 app.use('/venue', venuesController)
 
 const videosController = require('./controllers/video_controller')
+const { sequelize } = require('./models')
 app.use('/video', videosController)
 
 

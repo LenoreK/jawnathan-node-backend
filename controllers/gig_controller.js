@@ -7,7 +7,7 @@ const { Op } = require('sequelize')
 gigs.get('/', async (req, res) => {
     try {
         const foundGigs = await Gig.findAll({
-            order: [ [ 'date', 'ASC' ] ],
+            order: [ [ 'date', 'start_time', 'ASC' ] ],
             where: {
                 name: { [Op.like]: `%${req.query.name ? req.query.name : ''}%` }
             }
