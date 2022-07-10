@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
+    venue_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     venue_url: {
       type: DataTypes.STRING,
       allowNull: false

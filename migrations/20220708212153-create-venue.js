@@ -9,18 +9,27 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       venue_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      venue_name: {
+        type: DataTypes.STRING,
+        allowNull: false
       },
       venue_url: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       state: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       city: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       gig_id: {
+        allowNull: false,
         type: Sequelize.SMALLINT
       },
       createdAt: {
