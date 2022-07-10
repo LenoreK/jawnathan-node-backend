@@ -3,20 +3,20 @@ const { DataTypes } = require('sequelize')
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('videos', {
-      video_id: {
+    await queryInterface.createTable('user_gigs', {
+      user_gig_id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      video_url: {
-        type: Sequelize.STRING,
-        primaryKey: true,
+      user_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
-      video_name: {
-        type: Sequelize.STRING,
-        primaryKey: true,
+      gig_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
@@ -29,6 +29,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('videos');
+    await queryInterface.dropTable('user_gigs');
   }
 };

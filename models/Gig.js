@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
         as: "venue"
       })
 
-      gig.hasMany(user, {
-        foreignKey: "user_id",
-        as: "user"
+      gig.belongsToMany(user, {
+        foreignKey: "gig_id",
+        as: "user_gig"
       })
     }
   }

@@ -16,6 +16,14 @@ app.get('/', (req, res) => {
 })
 
 //CONTROLLERS
+const gigsController = require('./controllers/gig_controller')
+app.use('/gig', gigsController)
+
+const venuesController = require('./controllers/venue_controller')
+app.use('/venue', venuesController)
+
+const videosController = require('./controllers/video_controller')
+app.use('/video', videosController)
 
 
 // LISTEN

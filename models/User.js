@@ -6,9 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     class user extends Model {
         
         static associate(models) {
-            Gig.belongsTo(user, {
-                foreignKey: "gig_id",
-                as: "count_attending"
+            user.belongsToMany(gig, {
+                foreignKey: "user_id",
+                as: "user_gig"
             })
         }
       }

@@ -18,11 +18,21 @@ users.get('/', async (req, res) => {
     }
 })
 
+// FIND All Users Option 2
+users.get('/', async (req, res) => {
+    try {
+        const foundUsers = await User.findAll()
+res.status(200).json(foundUsers)
+} catch (error) {
+res.status(500).json(error)
+}
+})
+
 // FIND A SPECIFIC User -check back on this one
-users.get('/:name', async (req, res) => {
+users.get('/:id', async (req, res) => {
     try {
         const foundUser = await User.findOne({
-            where: { user_name: req.params.user_name },
+            where: { user_id: req.params.id },
         })
         res.status(200).json(foundUser)
     } catch (error) {
