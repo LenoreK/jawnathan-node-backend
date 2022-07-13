@@ -7,7 +7,7 @@ const { Op } = require('sequelize')
 gigs.get('/', async (req, res) => {
     try {
         const foundGigs = await Gig.findAll({
-            order: [ [ 'date', 'start_time', 'ASC' ] ],
+            order: [ [ 'date', 'ASC' ] ],
             where: {
                 name: { [Op.like]: `%${req.query.name ? req.query.name : ''}%` }
             }
@@ -74,7 +74,7 @@ gigs.put('/:id', async (req, res) => {
     }
 })
 
-// DELETE A BAND
+// DELETE A Gig
 gigs.delete('/:id', async (req, res) => {
     try {
         const deletedGigs = await Gig.destroy({

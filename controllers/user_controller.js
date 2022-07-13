@@ -26,7 +26,21 @@ users.get('/:id', async (req, res) => {
     }
 })
 
-// CREATE A Venue
+// Login User
+users.post('/', async (req, res) => {
+    let user = await User.findOne({
+        where: { email: req.body.user_name }
+    })
+
+    if (!user || !await bcrypt.compare(req.body.password, user.passwordDigest)) {
+        res.status(404).json({ message: `Could not find a user with the provided username and password`})
+    } else {
+        req.session.user_id = user.user_id
+    }
+    res.json({user})
+})
+
+// CREATE A User
 users.post('/', async (req, res) => {
     try {
         const newUser = await User.create(req.body)
@@ -39,7 +53,7 @@ users.post('/', async (req, res) => {
     }
 })
 
-// UPDATE A Venue
+// UPDATE A User
 users.put('/:id', async (req, res) => {
     try {
         const updatedUsers = await User.update(req.body, {
@@ -55,7 +69,7 @@ users.put('/:id', async (req, res) => {
     }
 })
 
-// DELETE A Venue
+// DELETE A User
 users.delete('/:id', async (req, res) => {
     try {
         const deletedUsers = await User.destroy({
