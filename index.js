@@ -28,6 +28,9 @@ const videosController = require('./controllers/video_controller')
 const { sequelize } = require('./models')
 app.use('/video', videosController)
 
+const userController = require('./controllers/user_controller')
+app.use('/user', userController)
+
 
 // LISTEN
 app.listen(process.env.PORT, () => {

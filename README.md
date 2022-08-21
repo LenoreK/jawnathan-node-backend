@@ -26,10 +26,10 @@ GET  | *   | 404 Page
 
 Database:
 
-Performances:
+Gigs:
 Name  | Data-type  |   Properties
 ------------- | ------------- | -------------
-performances_id  |  INT  |  primary key
+Gigs_id  |  INT  |  primary key
 start_time  |  TIME  |  NOT NULL
 end_time  |  TIME  |  //
 date  |  DATE  |  NOT NULL
@@ -41,15 +41,22 @@ User:
 Name  | Data-type  |   Properties
 ------------- | ------------- | -------------
 user_id  |  INT  |  primary key
-username  |  VARCHAR(50)  |  NOT NULL
-password  |  VARCHAR(50)  |  NOT NULL
+username  |  STRING  |  NOT NULL
+password  |  STRING  |  NOT NULL
 is_admin  |  Boolean  |  NOT NULL
+e-mail   |   String   |  NOT NULL
 
 Video:
 Name  | Data-type  |   Properties
 ------------- | ------------- | -------------
 video_id  |  INT  |  primary key
-path  |  VARCHAR(MAX)  |  NOT NULL
+path  |  STRING  |  NOT NULL
+name  |  STRING  |  NOT Null
 
 Music:
 This will be connected to spotify. His music is not up there yet so I can not test it.
+
+Reflection:
+This was an accomplishment for me. The front-end comes easily to me, but the backend does not. Through this project I solidified my understanding of the backend. I discovered that the backend is actually simple. There are more things that can go wrong in the backend, but the steps are generally the same every time. This has made me more comfortable with tackling more complicated projects in the future. In the future, I hope to make something like a restaurant management system with a complicated database.
+
+I have found that the more projects I do, the more confident I feel in my skills.
